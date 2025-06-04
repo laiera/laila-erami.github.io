@@ -65,9 +65,9 @@ main section {
     border-bottom: 1px solid #eee;
 }
 
-main section:last-of-type {
+/* main section:last-of-type {
     border-bottom: none;
-}
+} */
 
 h2 {
     text-align: center;
@@ -144,6 +144,7 @@ h2::after {
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
 .competences-list div h3 {
@@ -166,6 +167,116 @@ h2::after {
     font-size: 0.95rem;
     color: #555;
 }
+
+/* --- Styles pour la section Certifications et Formations --- */
+#certifications {
+    background: #e9ecef; /* Fond légèrement contrastant */
+    padding-bottom: 30px; /* Moins de padding en bas pour la bordure */
+}
+
+.certif-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.certif-item {
+    background: #fdfdfd;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certif-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.certif-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.certif-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.certif-item p strong {
+    color: #00bcd4; /* Mêmes accents de couleur que les projets */
+}
+
+/* --- Styles pour la section Loisirs --- */
+#loisirs {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); /* Fond très léger */
+    padding-top: 30px;
+}
+
+.loisirs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.loisir-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Important pour que l'image ne dépasse pas les bords arrondis */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.loisir-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.loisir-item img {
+    width: 100%;
+    height: 300px; /* Hauteur fixe pour les images */
+    object-fit: cover; /* Recadre les images pour qu'elles remplissent l'espace */
+    display: block; /* Supprime l'espace sous l'image */
+    border-bottom: 4px solid #00bcd4; /* Ligne de couleur sous l'image */
+}
+
+.loisir-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+    font-size: 1.7rem;
+    margin: 15px 0 10px;
+    font-weight: 600;
+}
+
+.loisir-item p {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0 20px 20px;
+}
+
+.loisirs-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
 
 /* Section À Propos */
 #apropos {
@@ -256,6 +367,20 @@ footer h2::after {
     #apropos p {
         font-size: 1rem;
     }
+
+    .certif-grid, .loisirs-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+        gap: 20px;
+    }
+    .certif-item, .loisir-item {
+        padding: 20px;
+    }
+    .certif-item h3, .loisir-item h3 {
+        font-size: 1.4rem;
+    }
+    .loisir-item img {
+        height: 180px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -274,5 +399,12 @@ footer h2::after {
 
     nav ul li a {
         font-size: 0.95rem;
+    }
+
+    .certif-item h3, .loisir-item h3 {
+        font-size: 1.3rem;
+    }
+    .loisir-item img {
+        height: 150px;
     }
 }
